@@ -1,4 +1,4 @@
-export const StandardAccordinCode = `
+export const StandardAccordionCode = `
 import { faMinus, faPlus } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import React, { useState } from "react";
@@ -17,11 +17,11 @@ const StandardAccordion = () => {
   };
 
   return (
-    <div className="w-full bg--400 mx-auto">
+    <div className="w-full bg-gray-400 mx-auto">
       {items.map((item, index) => (
-        <div key={index} className="border-">
+        <div key={index} className="border">
           <button
-            className="w-full bg--300 text-left p-2 flex items-center gap-4"
+            className="w-full bg-gray-300 text-left p-2 flex items-center gap-4"
             onClick={() => toggleAccordion(index)}
           >
             <FontAwesomeIcon 
@@ -33,7 +33,7 @@ const StandardAccordion = () => {
           <div
             className={\`overflow-hidden transition-all duration-300 ease-in-out \${activeIndex === index ? "max-h-40" : "max-h-0"}\`}
           >
-            <div className="p-2 bg--50">{item.content}</div>
+            <div className="p-2 bg-gray-50">{item.content}</div>
           </div>
         </div>
       ))}
@@ -46,7 +46,8 @@ export default StandardAccordion;
 
 
 
-export const  MultiExpandableAccordion =`import React, { useState } from "react";
+
+export const  MultiExpandableAccordionCode =`import React, { useState } from "react";
 const items = [{ title: "Item 1", content: "Content 1" }, { title: "Item 2", content: "Content 2" }];
 const MultiExpandableAccordion = () => {
   const [openSections, setOpenSections] = useState([]);

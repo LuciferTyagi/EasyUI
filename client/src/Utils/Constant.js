@@ -1,4 +1,4 @@
-export  const accordionCode = `
+export  const AccordionCode = `
   const [openItems, setOpenItems] = useState([]);
   
   const toggleItem = (index) => {

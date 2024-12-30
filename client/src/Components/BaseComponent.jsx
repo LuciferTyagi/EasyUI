@@ -1,12 +1,12 @@
 import { faReact } from '@fortawesome/free-brands-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faCopy, faPenToSquare } from '@fortawesome/free-solid-svg-icons';
-import React, { useEffect, useState,Suspense  } from 'react'
-import { accordionCode } from '../Utils/Constant';
+import React, {useState,Suspense  } from 'react'
+
 import  SyntaxHighlighter  from 'react-syntax-highlighter';
 import { materialDark } from 'react-syntax-highlighter/dist/esm/styles/prism';
 import { dracula } from 'react-syntax-highlighter/dist/esm/styles/hljs';
-import { StandardAccordinCode } from './Accordins/Code';
+
 
 const ComponentPreview = ({ selectedVariation,selectedCategoryName }) => {
   const Component = React.lazy(() =>
@@ -19,11 +19,25 @@ const ComponentPreview = ({ selectedVariation,selectedCategoryName }) => {
     </Suspense>
   );
 };
-const CodeBlock = ({ code }) => (
-  <SyntaxHighlighter language="javascript" style={dracula}>
-    {code}
-  </SyntaxHighlighter>
-)
+
+const DynamicCodeBlock = ({ selectedVariation, selectedCategoryName }) => {
+  const Code = React.lazy(() =>
+    import(`./${selectedCategoryName}/Code.js`).then((module) => ({
+      default: module[selectedVariation + "Code"], 
+    }))
+  );
+
+  return (
+    <Suspense fallback={<div>Loading code...</div>}>
+      {Code}
+    </Suspense>
+  );
+}
+// const CodeBlock = ({ code }) => (
+//   <SyntaxHighlighter language="javascript" style={dracula}>
+//     {code}
+//   </SyntaxHighlighter>
+// )
 
 const BaseComponent = ({ name , categories }) => {
         const [selectedTabs, setSelectedTabs] = useState({});
@@ -98,8 +112,10 @@ const BaseComponent = ({ name , categories }) => {
                                     
                                   ) : (
                                  <pre className="code-block">
-                                   <CodeBlock code={StandardAccordinCode}/>
-                                   {/* {variants.code} */}
+                               <DynamicCodeBlock
+                                selectedVariation={variants.name}
+                                selectedCategoryName={selectedItem.name}
+                                />
                                   </pre> 
                                   )}
                             </div>
@@ -108,10 +124,7 @@ const BaseComponent = ({ name , categories }) => {
                         
                     </div>
             </div>
-            <div className='w-[300px] h-[300px] bg-pink-300'>
-          
-
-            </div>
+           
     </div>
   )
 }

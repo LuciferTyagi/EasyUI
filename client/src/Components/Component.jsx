@@ -45,8 +45,8 @@ const Component = () => {
                         <div className='Component-list flex flex-col gap-2 mt-2 ml-4'
                         onClick={()=> setSideBar(!SideBar)}
                         >
-                            {category.items.map((item) =>(
-                                <p className={`text-base font-normal p-2 cursor-pointer ${selectedItem === item.name ? "bg-[#3E362E] text-white" : "text-[#3E362E]"}`}onClick={() => setSelectedItem(item.name)}>{item.name}</p>
+                            {category.items.map((item ,index) =>(
+                                <p key={index} className={`text-base font-normal p-2 cursor-pointer ${selectedItem === item.name ? "bg-[#3E362E] text-white" : "text-[#3E362E]"}`}onClick={() => setSelectedItem(item.name)}>{item.name}</p>
                             ))}
                         </div>
                         </>
