@@ -4,7 +4,7 @@ import Hero from './Hero'
 
 const Home = () => {
   return (
-    <div className=''>
+    <div className='bg-[#ECE0D4] pt-16'>
       <Hero/>    
     </div>
   )

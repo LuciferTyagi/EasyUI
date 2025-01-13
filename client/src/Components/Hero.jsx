@@ -1,18 +1,16 @@
 import { faCss, faReact } from '@fortawesome/free-brands-svg-icons'
-import { faFile } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import React from 'react'
 import { useNavigate } from "react-router-dom";
-import { heroCardData, testimonialsData } from '../Utils/Constant.js';
 import HeroCard from './HeroCard.jsx';
 import Testimonial from './Testimonial.jsx';
 import Footer from './Footer.jsx';
 const Hero = () => {
   const navigate  = useNavigate();
   return (
-    <div className='flex flex-col items-center mt-16 gap-4'>
+    <div className='flex flex-col items-center  gap-4'>
             <div className='Hero-Info w-[85%] p-2 rounded-md bg-[#865D36] flex flex-col gap-4 '>
-                    <p className='text-2xl font-semibold font-inter text-[#3E362E]'><span className='text-[#ECE0D4]'>EasyUI,</span>Effortless UI for Developers</p>
+                    <p className='text-2xl font-semibold font-inter text-[#3E362E]'><span className='text-[#ECE0D4]'>EasyUI, </span>Effortless UI for Developers</p>
                     <div className='flex  gap-3 text-base font-inter font-semibold text-[#3E362E] '>
                          <p className=' '>Build Using:</p>
                          <div className='flex items-center gap-1'>

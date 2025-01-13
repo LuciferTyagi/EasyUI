@@ -22,8 +22,8 @@ const Header = () => {
                 <FontAwesomeIcon icon={faSun} className='text-[#3E362E]'/>
                 <div className='Avatar bg-black rounded-[100%] size-4'></div>
           </div>
-          <p className='text-base  font-semibold font-inter text-[#3E362E]'>Find Your First Component..</p>
-          <FontAwesomeIcon icon={faBars}  className='lg:hidden text-[#3E362E] cursor-pointer' onClick={() =>setMobileMenu(!mobileMenu)}/>
+          <p className='text-base  font-semibold font-inter text-[#ECE0D4]'>Find Your First Component..</p>
+          <FontAwesomeIcon icon={faBars}  className='lg:hidden text-[#ECE0D4] cursor-pointer' onClick={() =>setMobileMenu(!mobileMenu)}/>
           {mobileMenu && (
             <div className="absolute top-14 right-2 bg-[#AC8968] shadow-lg rounded-md p-3 flex  gap-4 lg:hidden">
                <Link to='/'> <p className="text-[#3E362E] hover:text-[#93785B] font-inter text-sm cursor-pointer">Home</p> </Link>
