@@ -1,31 +1,51 @@
-export  const AccordionCode = `
-  const [openItems, setOpenItems] = useState([]);
+import { faFile , faPenToSquare } from '@fortawesome/free-solid-svg-icons';
+import { faReact } from '@fortawesome/free-brands-svg-icons'
+export const heroCardData = [
+  {
+    id: 1,
+    icon: faFile,
+    title: "100+ Free Components & Examples",
+    description:
+      "Hundreds of component examples for all your website needs that meet accessibility criteria.",
+  },
+  {
+    id: 2,
+    icon: faReact, 
+    title: "Pure ReactJS Code - No Extra Libraries",
+    description:
+      "All components are built using pure ReactJS, without any external libraries, ensuring clean and easy-to-maintain code.",
+  },
+  {
+    id: 3,
+    icon: faPenToSquare, 
+    title: "Future Customization Options",
+    description:
+      "In the future, EasyUI will allow you to fully customize components, giving you the flexibility to tailor designs to your needs.",
+  },
+];
+
+
+export const testimonialsData = [
+  {
+    id:1,
+    name: "Pratham Seth",
+    image: "/images/Pratham.jpg",
+    description:
+      "I don't know how to thank for such a good file, It should be paid product actually.",
+  },
+  {
+    id:2,
+    name: "Vishal Tiwari",
+    image: "/images/Vishal.png",
+    description:
+      "I don't know how to thank for such a good file, It should be paid product actually.",
+  },
+  {
+    id:3,
+    name: "CJ",
+    image: "/images/Cj.jpg",
+    description:
+      "I don't know how to thank for such a good file, It should be paid product actually.",
+  },
   
-  const toggleItem = (index) => {
-    setOpenItems((prevOpenItems) =>
-      prevOpenItems.includes(index)
-        ? prevOpenItems.filter((item) => item !== index)
-        : [...prevOpenItems, index]
-    );
-  };
-  
-  return (
-    <div className="accordion">
-      {['Item 1', 'Item 2', 'Item 3'].map((item, index) => (
-        <div key={index} className="accordion-item">
-          <div
-            className="accordion-header"
-            onClick={() => toggleItem(index)}
-          >
-            {item}
-          </div>
-          {openItems.includes(index) && (
-            <div className="accordion-body">
-              Content for {item}
-            </div>
-          )}
-        </div>
-      ))}
-    </div>
-  );
-  `;
+];

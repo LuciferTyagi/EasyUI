@@ -5,7 +5,7 @@ import React, {useState,Suspense  } from 'react'
 
 import  SyntaxHighlighter  from 'react-syntax-highlighter';
 import { materialDark } from 'react-syntax-highlighter/dist/esm/styles/prism';
-import { dracula } from 'react-syntax-highlighter/dist/esm/styles/hljs';
+import { darcula, dracula } from 'react-syntax-highlighter/dist/esm/styles/hljs';
 
 
 const ComponentPreview = ({ selectedVariation,selectedCategoryName }) => {
@@ -21,18 +21,28 @@ const ComponentPreview = ({ selectedVariation,selectedCategoryName }) => {
 };
 
 const DynamicCodeBlock = ({ selectedVariation, selectedCategoryName }) => {
-  const Code = React.lazy(() =>
-    import(`./${selectedCategoryName}/Code.js`).then((module) => ({
-      default: module[selectedVariation + "Code"], 
-    }))
+  const CodeComponent = React.lazy(() =>
+    import(`./${selectedCategoryName}/Code.js`).then((module) => {
+      const codeString = module[selectedVariation + "Code"];
+      if (!codeString) {
+        throw new Error(`Code for variation "${selectedVariation}Code" not found.`);
+      }
+      return {
+        default: () => (
+          <SyntaxHighlighter language="javascript" style={darcula}>
+            {codeString}
+          </SyntaxHighlighter>
+        ),
+      };
+    })
   );
-
   return (
     <Suspense fallback={<div>Loading code...</div>}>
-      {Code}
+      <CodeComponent />
     </Suspense>
   );
-}
+};
+
 // const CodeBlock = ({ code }) => (
 //   <SyntaxHighlighter language="javascript" style={dracula}>
 //     {code}
