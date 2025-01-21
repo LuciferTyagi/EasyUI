@@ -7,8 +7,8 @@ import Testimonial from './Testimonial.jsx';
 const Hero = () => {
   const navigate  = useNavigate();
   return (
-    <div className='  bg-red-400 flex flex-col items-center  gap-4 px-2 2xl:px-6 '>
-            <div className='Hero-Main-Container  lg:flex lg:justify-between lg:items-center    bg-yellow-500'>
+    <div className='  bg--400 flex flex-col items-center  gap-4 px-2 2xl:px-6 '>
+            <div className='Hero-Main-Container  lg:flex lg:justify-between lg:items-center    bg--500'>
                <div className='Hero-Info-&Button-Container 2xl:w-[40%] bg--300  flex flex-col gap-4'>
                  <div className='Hero-Info w-[100%]  p-2 rounded-md bg-[#865D36] flex flex-col gap-4 '>
                     <p className='text-2xl md:text-3xl 2xl:text-4xl font-semibold font-inter text-[#3E362E]'><span className='text-[#ECE0D4]'>EasyUI, </span>Effortless UI for Developers</p>
@@ -36,7 +36,7 @@ const Hero = () => {
                </div>
             </div>
 
-           <div className='HeroCard-Container  flex flex-col gap-4 lg:flex-row lg:mt-16 bg-green-300'>
+           <div className='HeroCard-Container  flex flex-col gap-4 lg:flex-row lg:mt-16 bg--300'>
            <HeroCard/>
            </div>
            <Testimonial/>

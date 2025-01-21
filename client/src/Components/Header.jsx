@@ -11,7 +11,7 @@ const Header = () => {
     const[showPopUp , setShowPopUp] = useState(false);
   return (
     <div className=' w-full bg-[#AC8968] flex items-center justify-between py-2 px-2  lg:px-3 2xl:px-6 '>  
-          <img src='/images/LOGO.png' alt='logo' className='size-7 md:size-8 2xl:size-10 bg-yellow-200'/>
+          <img src='/images/LOGO.png' alt='logo' className='size-7 md:size-8 2xl:size-10 bg--200'/>
           
           <div className='hidden header-menu lg:flex lg:gap-4 2xl:gap-6 font-inter text-sm lg:text-base 2xl:text-lg cursor-pointer'>
                 <Link to='/'> <p className='text-[#3E362E] hover:text-[#93785B] '>Home</p></Link>

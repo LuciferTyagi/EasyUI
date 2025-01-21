@@ -10,8 +10,8 @@ const PopUp = ({onClose}) => {
         }
     }
   return (
-    <div ref={popRef} onClick={closePopUp} className=' flex items-center  fixed inset-0 z-[50]  backdrop-blur-sm font-inter '>
-        <div className='bg-[#d49860] rounded-md w-[50%] mx-auto p-4'>
+    <div ref={popRef} onClick={closePopUp} className=' hidden lg:flex items-center  fixed inset-0 z-[50]  backdrop-blur-sm font-inter '>
+        <div className='bg-[#d49860] rounded-md lg:w-[65%]  xl:w-[50%] mx-auto p-4'>
            <button onClick={onClose} className='text-[#ECE0D4]'><FontAwesomeIcon icon={faX}/></button>
             <p className='text-3xl font-semibold text-[#3E362E]'><span className='text-[#ECE0D4]'>Hi, I'm </span>Yagyansh Tyagi</p>
             <div className='flex gap-8  mt-4'>
