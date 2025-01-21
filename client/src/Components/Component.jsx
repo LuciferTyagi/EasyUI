@@ -10,7 +10,7 @@ const Component = () => {
 
     useEffect(()=>{
         const fetchCategories = async () =>{
-            const response  = await fetch("http://localhost:8000/api/categories")
+            const response  = await fetch("http://localhost:9000/api/categories")
             const data = await response.json();
             setCategories(data);
             console.log(data);
