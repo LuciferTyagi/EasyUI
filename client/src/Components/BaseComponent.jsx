@@ -2,9 +2,7 @@ import { faReact } from '@fortawesome/free-brands-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faCopy, faPenToSquare } from '@fortawesome/free-solid-svg-icons';
 import React, {useState,Suspense  } from 'react'
-
 import  SyntaxHighlighter  from 'react-syntax-highlighter';
-import { materialDark } from 'react-syntax-highlighter/dist/esm/styles/prism';
 import { darcula, dracula } from 'react-syntax-highlighter/dist/esm/styles/hljs';
 
 
@@ -43,11 +41,7 @@ const DynamicCodeBlock = ({ selectedVariation, selectedCategoryName }) => {
   );
 };
 
-// const CodeBlock = ({ code }) => (
-//   <SyntaxHighlighter language="javascript" style={dracula}>
-//     {code}
-//   </SyntaxHighlighter>
-// )
+
 
 const BaseComponent = ({ name , categories }) => {
         const [selectedTabs, setSelectedTabs] = useState({});

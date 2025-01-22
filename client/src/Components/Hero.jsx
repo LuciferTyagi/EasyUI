@@ -16,7 +16,7 @@ const Hero = () => {
                          <p className=''>Build Using:</p>
                          <div className='flex items-center gap-1'>
                          <FontAwesomeIcon icon={faReact} className='text-[#ECE0D4]'/>
-                         <p>React</p>
+                         <p>ReactJs</p>
                          </div>
                          <div className='flex items-center gap-1'>
                          <FontAwesomeIcon icon={faCss} className='text-[#ECE0D4]'/>
