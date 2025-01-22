@@ -42,12 +42,9 @@ const StandardAccordion = () => {
 };
 
 export default StandardAccordion;
-`
+`;
 
-
-
-
-export const  MultiExpandableAccordionCode =`import React, { useState } from "react";
+export const MultiExpandableAccordionCode = `import React, { useState } from "react";
 const items = [{ title: "Item 1", content: "Content 1" }, { title: "Item 2", content: "Content 2" }];
 const MultiExpandableAccordion = () => {
   const [openSections, setOpenSections] = useState([]);
@@ -82,7 +79,7 @@ const MultiExpandableAccordion = () => {
 };
 
 export default MultiExpandableAccordion;
-`
+`;
 export const NestedAccordinCode = `
 import React, { useState } from "react";
 const items = [
@@ -122,4 +119,4 @@ const NestedAccordion = () => {
   );
 };
 
-export default NestedAccordion;`
+export default NestedAccordion;`;

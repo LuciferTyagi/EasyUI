@@ -18,7 +18,7 @@ const Component = () => {
         fetchCategories();
     },[]);
   return (
-    <div className='flex flex-col lg:flex-row font-inter'>
+    <div className='flex flex-col lg:flex-row font-inter '>
             <div className='lg:hidden flex items-center ml-auto mt-2 mr-2 p-2 border-[1px] border-[#3E362E] rounded-md  gap-2   bg--400 cursor-pointer'
               onClick={() => setSideBar(!SideBar)}
             >
@@ -54,7 +54,7 @@ const Component = () => {
                   
                 </div>
             )}
-            <div className='hidden lg:block Sidebar bg-[#A69080] w-[50%] md:w-[40%]  h-screen'>
+            <div className='hidden lg:block Sidebar bg-[#A69080] w-[50%] md:w-[35%]  '>
                     {/* <div className='Close-button ml-auto mr-2 my-2 rounded-[100%] border-[1px] border-[#3E362E] size-8 flex items-center justify-center'>
                         <FontAwesomeIcon icon={faXmark} className='text-[#3E362E] cursor-pointer' onClick={() => setSideBar(!SideBar)}/>
                     </div> */}
@@ -81,7 +81,7 @@ const Component = () => {
                     ))}
                   
             </div>
-            <div className=' bg--500'>
+            <div className='w-[100%] lg:w-[65%] bg-yellow-500'>
                 {selectedItem === "About this Page" ? (
                     <PageInfo />
                 ) : (

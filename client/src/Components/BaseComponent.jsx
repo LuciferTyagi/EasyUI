@@ -27,9 +27,11 @@ const DynamicCodeBlock = ({ selectedVariation, selectedCategoryName }) => {
       }
       return {
         default: () => (
+          <div className=''>
           <SyntaxHighlighter language="javascript" style={darcula}>
             {codeString}
           </SyntaxHighlighter>
+          </div>
         ),
       };
     })
@@ -60,7 +62,7 @@ const BaseComponent = ({ name , categories }) => {
       console.log("SelectedItem",selectedItem)
 
   return (
-    <div className="flex flex-col gap-4  bg--300 p-4 ">
+    <div className="flex flex-col gap-4   bg-red-300 p-4 ">
             <div className='Component-Info flex flex-col gap-2'>
       
                     <p className='text-base font-medium text-[#3E362E]'>{selectedCategory.name}</p>
@@ -107,22 +109,22 @@ const BaseComponent = ({ name , categories }) => {
                                                 <FontAwesomeIcon icon={faPenToSquare} className='text-[#865D36]'/>
                                     </div>
                                 </div>
-                                <div className={`Component-Body ${!isPreview ? "h-[500px]" :"" } overflow-y-scroll  border-[1px] border-[#3E362E] rounded ${!isPreview ?"" :"p-4"}`}>
-                                       
-                                 {isPreview   ? (
+                                <div className={`Component-Body w-auto h-[400px] overflow-y-scroll bg-red-600 border-[1px] border-[#3E362E] rounded ${!isPreview ?"" :"p-4"} `}>
+                                {isPreview   ? (
                                 
-                                  <ComponentPreview selectedVariation={variants.name} selectedCategoryName={selectedItem.name} />
+                                <ComponentPreview selectedVariation={variants.name} selectedCategoryName={selectedItem.name} />
+                                
                                   
-                                    
-                                  ) : (
-                                 <pre className="code-block">
-                               <DynamicCodeBlock
-                                selectedVariation={variants.name}
-                                selectedCategoryName={selectedItem.name}
-                                />
-                                  </pre> 
-                                  )}
-                            </div>
+                                ) : (
+                               <pre className="code-block">
+                             <DynamicCodeBlock
+                              selectedVariation={variants.name}
+                              selectedCategoryName={selectedItem.name}
+                              />
+                                </pre> 
+                                )}
+                                  </div>
+                               
                                 </div>
                                 )})}
                         
