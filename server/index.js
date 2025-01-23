@@ -2,8 +2,8 @@ import dotenv from "dotenv";
 import connectDB from "./src/db/index.js";
 import express from 'express';
 import cors from 'cors';
-import categoryRoutes from './src/routes/categoryRoutes.js'; // Import the category routes
-import itemRoutes from './src/routes/itemRoutes.js'; // Import the item routes
+import categoryRoutes from './src/routes/CategoryRoutes.js'; // Import the category routes
+import itemRoutes from './src/routes/ItemRoutes.js'; // Import the item routes
 dotenv.config({
   path: "./env",
 });
