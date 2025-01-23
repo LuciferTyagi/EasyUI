@@ -1,1 +1,5 @@
-export const DB_NAME = "EasyUIDB";
+const DB_NAME = "EasyUIDB";
+
+module.exports = {
+  DB_NAME
+};

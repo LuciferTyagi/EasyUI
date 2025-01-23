@@ -1,7 +1,7 @@
-import Category from "../models/Category.js";
-import Item from "../models/Item.js";
+const Category = require("../models/Category.js");
+const Item = require("../models/Item.js");
 
-export const getCategories = async (req, res) => {
+const getCategories = async (req, res) => {
   try {
     const categories = await Category.find().populate('items'); // Fetch with items
     res.json(categories);
@@ -10,7 +10,7 @@ export const getCategories = async (req, res) => {
   }
 };
 
-export const addCategory = async (req, res) => {
+const addCategory = async (req, res) => {
   const { name } = req.body;
   try {
     const category = new Category({ name });
@@ -19,4 +19,9 @@ export const addCategory = async (req, res) => {
   } catch (err) {
     res.status(400).json({ error: err.message });
   }
+};
+
+module.exports = {
+  getCategories,
+  addCategory,
 };

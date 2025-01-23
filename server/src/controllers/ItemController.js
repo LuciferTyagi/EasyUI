@@ -1,7 +1,7 @@
-import Category from "../models/Category.js";
-import Item from "../models/Item.js";
+const Category = require("../models/Category.js");
+const Item = require("../models/Item.js");
 
-export const getItemsByCategory = async (req, res) => {
+const getItemsByCategory = async (req, res) => {
   const { categoryId } = req.params;
   try {
     const items = await Item.find({ category: categoryId });
@@ -11,10 +11,10 @@ export const getItemsByCategory = async (req, res) => {
   }
 };
 
-export const addItem = async (req, res) => {
-  const { name,generalDetail, variations , categoryId } = req.body;
+const addItem = async (req, res) => {
+  const { name, generalDetail, variations, categoryId } = req.body;
   try {
-    const item = new Item({ name,generalDetail, variations, category: categoryId });
+    const item = new Item({ name, generalDetail, variations, category: categoryId });
     await item.save();
 
     // Add item reference to category
@@ -28,7 +28,7 @@ export const addItem = async (req, res) => {
   }
 };
 
-export const addVariationToItem = async (req, res) => {
+const addVariationToItem = async (req, res) => {
   const { itemId } = req.params; // Item ID from the URL
   const { variations } = req.body; // New variations from the request body
 
@@ -49,4 +49,10 @@ export const addVariationToItem = async (req, res) => {
   } catch (err) {
     res.status(500).json({ error: err.message });
   }
+};
+
+module.exports = {
+  getItemsByCategory,
+  addItem,
+  addVariationToItem,
 };
