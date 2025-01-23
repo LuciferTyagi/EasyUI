@@ -2,8 +2,8 @@ require("dotenv").config();
 const connectDB = require("./src/db/index.js");
 const express = require('express');
 const cors = require('cors');
-const categoryRoutes = require('./src/routes/CategoryRoutes.js'); // Use require for the category route
-const itemRoutes = require('./src/routes/ItemRoutes.js'); // Use require for the item route
+const categoryRoutes = require('./src/routes/CategoryRoutes.js'); 
+const itemRoutes = require('./src/routes/ItemRoutes.js'); 
 
 const app = express();
 app.use(cors());
