@@ -1,17 +1,15 @@
-
+import dotenv from "dotenv";
 import connectDB from "./src/db/index.js";
 import express from 'express';
 import cors from 'cors';
 import categoryRoutes from './src/routes/CategoryRoutes.js'; // Import the category route
 import itemRoutes from './src/routes/ItemRoutes.js';
-const corsConfig = {
-  origin:"*",
-  Credential:true,
-  methods : ["GET" , "POST" ,"PUT" , "PATCH", "DELETE"]
-}
-app.options("",cors(corsConfig));
+dotenv.config({
+  path: "./env",
+});
+
 const app = express();
-app.use(cors(corsConfig));
+app.use(cors());
 app.use(express.json());
 connectDB();
 
