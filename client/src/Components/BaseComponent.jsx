@@ -109,12 +109,9 @@ const BaseComponent = ({ name , categories }) => {
                                                 <FontAwesomeIcon icon={faPenToSquare} className='text-[#865D36]'/>
                                     </div>
                                 </div>
-                                <div className={`Component-Body w-auto h-[400px] overflow-y-scroll bg-red-600 border-[1px] border-[#3E362E] rounded ${!isPreview ?"" :"p-4"} `}>
-                                {isPreview   ? (
-                                
-                                <ComponentPreview selectedVariation={variants.name} selectedCategoryName={selectedItem.name} />
-                                
-                                  
+                                <div className={`Component-Body w-auto h-[400px] overflow-y-scroll bg--600 border-[1px] border-[#3E362E] rounded ${!isPreview ?"" :"p-4"} `}>
+                                {isPreview   ? ( 
+                                <ComponentPreview selectedVariation={variants.name} selectedCategoryName={selectedItem.name} />    
                                 ) : (
                                <pre className="code-block">
                              <DynamicCodeBlock

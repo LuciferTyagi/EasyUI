@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react'
+import React, { useEffect, useRef, useState } from 'react'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faAddressCard, faArrowRight, faXmark } from '@fortawesome/free-solid-svg-icons';
 import PageInfo from './PageInfo';
@@ -7,6 +7,12 @@ const Component = () => {
     const[SideBar ,setSideBar] = useState(false);
     const [selectedItem, setSelectedItem] = useState("About this Page");
     const [categories , setCategories] = useState([]);
+    const sidebarRef = useRef();
+    const closeSidebar = (e) =>{
+        if(sidebarRef.current === e.target){
+            setSideBar(false)
+        }
+    }
 
     useEffect(()=>{
         const fetchCategories = async () =>{
@@ -18,7 +24,7 @@ const Component = () => {
         fetchCategories();
     },[]);
   return (
-    <div className='flex flex-col lg:flex-row font-inter '>
+    <div className='container bg-green-500 mx-auto flex flex-col lg:flex-row font-inter h-[94vh] overflow-y-scroll'>
             <div className='lg:hidden flex items-center ml-auto mt-2 mr-2 p-2 border-[1px] border-[#3E362E] rounded-md  gap-2   bg--400 cursor-pointer'
               onClick={() => setSideBar(!SideBar)}
             >
@@ -26,7 +32,8 @@ const Component = () => {
                 <p className='text-[#3E362E] text-base'>Sidebar</p>
             </div>
             {SideBar && (
-                <div className='lg:hidden absolute  top-0 Sidebar bg-[#A69080] w-[50%] md:w-[40%] h-screen'>
+                <div ref={sidebarRef} onClick={closeSidebar} className='lg:hidden SideBar-inset fixed inset-0 backdrop-blur-sm  '>
+                <div className='lg:hidden overflow-y-scroll absolute  top-0 Sidebar bg-[#A69080] w-[50%] md:w-[40%] h-screen'>
                     <div className='Close-button ml-auto mr-2 my-2 rounded-[100%] border-[1px] border-[#3E362E] size-8 flex items-center justify-center'>
                         <FontAwesomeIcon icon={faXmark} className='text-[#3E362E] cursor-pointer' onClick={() => setSideBar(!SideBar)}/>
                     </div>
@@ -53,11 +60,10 @@ const Component = () => {
                     ))}
                   
                 </div>
+                </div>
             )}
-            <div className='hidden lg:block Sidebar bg-[#A69080] w-[50%] md:w-[35%]  '>
-                    {/* <div className='Close-button ml-auto mr-2 my-2 rounded-[100%] border-[1px] border-[#3E362E] size-8 flex items-center justify-center'>
-                        <FontAwesomeIcon icon={faXmark} className='text-[#3E362E] cursor-pointer' onClick={() => setSideBar(!SideBar)}/>
-                    </div> */}
+            <div className='hidden  lg:block Sidebar bg-[#A69080] w-[50%] md:w-[35%] 2xl:w-[30%] h-[100%]  overflow-y-scroll'>
+                   
                     <div className={`Default-Page flex gap-2 items-center mr-auto p-2 cursor-pointer ${selectedItem === "About this Page" ? "bg-[#3E362E] text-white" :"text-[#3E362E]"}`}
                     onClick={() => {
                       setSelectedItem("About this Page")
@@ -81,7 +87,7 @@ const Component = () => {
                     ))}
                   
             </div>
-            <div className='w-[100%] lg:w-[65%] bg-yellow-500'>
+            <div className='Main-Body w-[100%] lg:w-[70%] bg--500'>
                 {selectedItem === "About this Page" ? (
                     <PageInfo />
                 ) : (
