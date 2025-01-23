@@ -1,12 +1,10 @@
-import dotenv from "dotenv";
+
 import connectDB from "./src/db/index.js";
 import express from 'express';
 import cors from 'cors';
 import categoryRoutes from './src/routes/CategoryRoutes.js'; // Import the category route
 import itemRoutes from './src/routes/ItemRoutes.js';
-dotenv.config({
-  path: "./env",
-});
+
 
 const app = express();
 app.use(cors());
