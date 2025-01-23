@@ -1,5 +1,5 @@
 import express from 'express';
-import { getItemsByCategory, addItem ,addVariationToItem} from '../controllers/ItemController.js'; 
+import { getItemsByCategory, addItem ,addVariationToItem} from '../controllers/ItemController'; 
 
 const router = express.Router();
 
