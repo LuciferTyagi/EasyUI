@@ -7,9 +7,9 @@ import itemRoutes from './src/routes/ItemRoutes.js';
 const corsConfig = {
   origin:"*",
   Credential:true,
-  methods : ["GET" , "POST" ,"PUT" , "DELETE"]
+  methods : ["GET" , "POST" ,"PUT" , "PATCH", "DELETE"]
 }
-
+app.options("",cors(corsConfig));
 const app = express();
 app.use(cors(corsConfig));
 app.use(express.json());
