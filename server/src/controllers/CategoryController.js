@@ -1,5 +1,5 @@
 const Category = require("../models/Category.js");
-const Item = require("../models/Item.js");
+
 
 const getCategories = async (req, res) => {
   try {
