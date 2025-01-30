@@ -2,3 +2,31 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@layer base{
+ @font-face {
+    font-family: 'Helvetica-Bold';
+    src: url(../public/fonts/Helvetica-Bold.ttf) format(trueType);
+ }
+}
+
+/* width */
+::-webkit-scrollbar {
+    width: 8px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+    background: #ECE0D4;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+    background: #865D36;
+    border-radius: 5px;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+    background: #3E362E;
+}

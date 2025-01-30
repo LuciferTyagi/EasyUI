@@ -1,48 +1,79 @@
 import React, { useState } from 'react'
 import { Link } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faMagnifyingGlass } from '@fortawesome/free-solid-svg-icons';
+import { faMagnifyingGlass, faMoon, faX } from '@fortawesome/free-solid-svg-icons';
 import { faGithub } from '@fortawesome/free-brands-svg-icons';
 import { faSun } from '@fortawesome/free-solid-svg-icons';
 import { faBars } from '@fortawesome/free-solid-svg-icons';
 import PopUp from './PopUp';
+import Searchbar from './Searchbar';
 const Header = () => {
     const[mobileMenu , setMobileMenu] = useState(false)
     const[showPopUp , setShowPopUp] = useState(false);
   return (
-    <div className=' w-full bg-[#AC8968] flex items-center justify-between py-2 px-2  lg:px-3 2xl:px-6 '>  
-          <img src='/images/LOGO.png' alt='logo' className='size-7 md:size-8 2xl:size-10 bg--200'/>
+    <header className='w-full bg-green-300 border-b'>
+    <nav className='flex lg:hidden w-full bg-white  items-center justify-between py-4 px-4'>
+          <a href='#' className='Company-LOGO flex items-center gap-1'>           
+             <img src='/images/E-2.png' alt='logo' width='50' height='50'  className=''/>
+             
+          </a>  
           
-          <div className='hidden header-menu lg:flex lg:gap-4 2xl:gap-6 font-inter text-sm lg:text-base 2xl:text-lg cursor-pointer'>
-                <Link to='/'> <p className='text-[#3E362E] hover:text-[#93785B] '>Home</p></Link>
-                <Link to='/components'> <p className='text-[#3E362E] hover:text-[#93785B] '>Components</p></Link>
-                <p onClick={()=> setShowPopUp(true)} className='text-[#3E362E] hover:text-[#93785B] '>Me</p>
+          <div className='Searchbar&Menu flex items-center  gap-4'>
+          <Searchbar/>
+          <FontAwesomeIcon icon={faBars}  className='size-5  cursor-pointer' onClick={() =>setMobileMenu(!mobileMenu)}/>
           </div>
-          <div className='hidden header-icon lg:flex lg:gap-4 2xl:gap-6 lg:text-base 2xl:text-lg cursor-pointer'>
-                <FontAwesomeIcon icon={faMagnifyingGlass} className='text-[#3E362E]' />
-                <FontAwesomeIcon icon={faGithub}  className='text-[#3E362E]'/>
-                <FontAwesomeIcon icon={faSun} className='text-[#3E362E]'/>
-                <div className='Avatar bg-black rounded-[100%] size-4'></div>
-          </div>
-          <p className='text-base md:text-lg lg:hidden  font-semibold font-inter text-[#ECE0D4]'>Find Your First Component..</p>
-          <FontAwesomeIcon icon={faBars}  className='lg:hidden text-[#ECE0D4] md:text-lg cursor-pointer' onClick={() =>setMobileMenu(!mobileMenu)}/>
           {mobileMenu && (
-            <div className="absolute top-14 right-2 bg-[#AC8968] shadow-lg rounded p-3 flex    gap-4 lg:hidden">
-               <Link to='/'> <p className="text-[#3E362E] hover:text-[#93785B] font-inter text-sm md:text-base cursor-pointer">Home</p> </Link>
-               <Link to='/components'> <p className="text-[#3E362E] hover:text-[#93785B] font-inter text-sm md:text-base cursor-pointer">Components</p></Link>
-               <div className="flex items-center gap-4">
-                 <FontAwesomeIcon icon={faMagnifyingGlass} className="text-[#3E362E]  " />
-                 <FontAwesomeIcon icon={faGithub} className="text-[#3E362E] " />
-                 <FontAwesomeIcon icon={faSun} className="text-[#3E362E] " />
-               </div>
-             </div>
-           )}
-           {showPopUp &&(
-
-         <PopUp onClose={()=>setShowPopUp(false)}/>
-           )}
+            <div className='Mobile-Menu fixed inset-0 z-[100] bg-white flex flex-col pt-4 space-y-10 transition duration-300'>
+                <div className='Mobile-Menu-Header w-full flex items-center justify-between px-4  bg--500'>
+                    <a href='#' className='flex items-center'>
+                    <img src='/images/E-2.png' alt='Logo' width={50} className=''/>
+                    </a>
+                    <div className='flex items-center justify-center gap-3 bg--300'>
+                          <button className='DarkMode-Button '>
+                                  <FontAwesomeIcon icon={faMoon} className='size-5 '/>
+                          </button>
+                          <button onClick={() =>setMobileMenu(false)} className='Close-Button'>
+                                  <FontAwesomeIcon icon={faX} className='size-5 '/>
+                          </button>
+                    </div>
+                </div>
+                <div className='Mobile-Menu-Items  flex flex-col items-start justify-start gap-3 px-4 bg-rd-400 text-2xl font-inter w-fit'>
+                      <a href='#'><span>Components</span></a>
+                      <a href='#'><span>Documentation</span></a>
+                      <a href='#'><span>Portfolio</span></a>
+                      <a href='#'><span>Github</span></a>
+                </div>
+          </div>
+          )}
+          
+          
             
-    </div>
+    </nav>
+    <nav className='hidden lg:flex items-center justify-between mx-auto max-w-[1400px] p-8 bg-white font-inter'>
+          < a href='#' className='Company-LOGO flex items-center gap-3'>
+              <img src='/images/E-2.png' alt='logo' width={60} className=''/>
+              <h1 className='text-2xl font-bold'>Easy UI</h1>
+          </a>
+          <ul className='Nav-Primary-Items flex  gap-5 text-base text-[#00000060] bg--400'>
+              <li>
+                <a href='#'>Components</a>
+              </li>
+              <li>
+                <a href='#'>Documentation</a>
+              </li>
+              <li>
+                <a href='#'>Porfolio</a>
+              </li>        
+          </ul>
+          <div className='Nav-Secondary-Items flex  items-center gap-5 bg--400'>
+                <a href='#' className='text-base text-[#00000060]'>Github</a>
+                <button className='DarkMode-Button '>
+                    <FontAwesomeIcon icon={faMoon} className='size-5 '/>
+                </button>
+                <Searchbar/>
+          </div>
+    </nav>
+    </header>
   )
 }
 

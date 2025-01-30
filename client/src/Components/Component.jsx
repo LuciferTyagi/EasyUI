@@ -24,7 +24,7 @@ const Component = () => {
         fetchCategories();
     },[]);
   return (
-    <div className='container bg-green-500 mx-auto flex flex-col lg:flex-row font-inter h-[94vh] overflow-y-scroll'>
+    <div className='container bg--500 mx-auto flex flex-col lg:flex-row font-inter h-[] '>
             <div className='lg:hidden flex items-center ml-auto mt-2 mr-2 p-2 border-[1px] border-[#3E362E] rounded-md  gap-2   bg--400 cursor-pointer'
               onClick={() => setSideBar(!SideBar)}
             >
@@ -62,7 +62,7 @@ const Component = () => {
                 </div>
                 </div>
             )}
-            <div className='hidden  lg:block Sidebar bg-[#A69080] w-[50%] md:w-[35%] 2xl:w-[30%] h-[100%]  overflow-y-scroll'>
+            <div className='hidden  lg:block Sidebar bg-[#A69080] w-[50%] md:w-[35%] 2xl:w-[30%] h-[]  overflow-y-scroll'>
                    
                     <div className={`Default-Page flex gap-2 items-center mr-auto p-2 cursor-pointer ${selectedItem === "About this Page" ? "bg-[#3E362E] text-white" :"text-[#3E362E]"}`}
                     onClick={() => {

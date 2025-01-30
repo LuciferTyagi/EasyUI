@@ -5,7 +5,7 @@ import React from 'react'
 
 const PageInfo = () => {
   return (
-    <div className='flex flex-col items-center gap-4 font-inter'>
+    <div className='flex flex-col items-center gap-4 font-inter h-[94vh]'>
             <div className='Why-box bg-[#865D36] w-[95%] flex flex-col gap-2 2xl:gap-4 p-3 2xl:p-4 rounded-md mt-4'>
                     <p className='text-xl 2xl:text-3xl  font-semibold text-[#3E362E] '>Why EasyUI?</p>
                     <p className='text-[#AC8968] font-medium 2xl:text-lg'><FontAwesomeIcon icon={faCircle} className='size-2  text-[#3E362E] mr-1 mb-1'/>Pre-Built React Components: Ready-to-use components like buttons, navbars, modals, and more—designed for fast development.</p>

@@ -7,7 +7,8 @@ export default {
   theme: {
     extend: {
       fontFamily:{
-        inter:["Inter", "serif"]
+        inter:["Inter", "serif"],
+        'Helvetica-Bold':['Helvetica-Bold','sans-serif']
       }
     },
   },

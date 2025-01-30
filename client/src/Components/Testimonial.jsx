@@ -1,7 +1,9 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { testimonialsData } from '../Utils/Constant'
+import TestimonialPopup from './TestimonialPopup';
 
 const Testimonial = () => {
+   const[showTestimonialPopup , setshowTestimonialPopup] = useState(false);
   return (
      <div className='Testimonials w-[100%] p-2 rounded bg-[#AC8968] font-inter text-lg my-4 md:my-6 lg:my-16 flex flex-col items-center '>
                       <div className='Testimonials-heading flex flex-col items-center gap-1 bg--300 py-2 lg:py-4'>
@@ -21,7 +23,10 @@ const Testimonial = () => {
                        </div>
                       ))}
                      </div>
-                     <button className='border-[1px]  border-[#3E362E90] text-[#ECE0D4] text-sm md:text-base lg:text-lg font-inter p-2 rounded mt-4 '>Share your Expeirence</button>
+                     <button onClick={()=>setshowTestimonialPopup(true)} className='border-[1px]  border-[#3E362E90] text-[#ECE0D4] text-sm md:text-base lg:text-lg font-inter p-2 rounded mt-4 '>Share your Expeirence</button>
+                      {showTestimonialPopup &&(
+                        <TestimonialPopup onClose={()=>setshowTestimonialPopup(false)}/>
+                      )}
                 </div>
   )
 }
