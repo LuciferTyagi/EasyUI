@@ -11,8 +11,8 @@ const Header = () => {
     const[mobileMenu , setMobileMenu] = useState(false)
     const[showPopUp , setShowPopUp] = useState(false);
   return (
-    <header className='w-full bg-green-300 border-b'>
-    <nav className='flex lg:hidden w-full bg-white  items-center justify-between py-4 px-4'>
+    <header className='w-full bg-white border-b'>
+    <nav className='Mobile-Nav flex lg:hidden w-full bg-white  items-center justify-between py-4 px-4'>
           <a href='#' className='Company-LOGO flex items-center gap-1'>           
              <img src='/images/E-2.png' alt='logo' width='50' height='50'  className=''/>
              
@@ -49,7 +49,8 @@ const Header = () => {
           
             
     </nav>
-    <nav className='hidden lg:flex items-center justify-between mx-auto max-w-[1400px] p-8 bg-white font-inter'>
+
+    <nav className='Desktop-Nav hidden lg:flex items-center justify-between mx-auto max-w-[1400px] p-8 bg-white font-inter'>
           < a href='#' className='Company-LOGO flex items-center gap-3'>
               <img src='/images/E-2.png' alt='logo' width={60} className=''/>
               <h1 className='text-2xl font-bold'>Easy UI</h1>
