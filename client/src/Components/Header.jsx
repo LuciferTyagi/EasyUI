@@ -11,7 +11,10 @@ const Header = () => {
     const[mobileMenu , setMobileMenu] = useState(false)
     const[showPopUp , setShowPopUp] = useState(false);
   return (
-    <header className='w-full bg-white border-b'>
+    <header className='w-full  bg-white border-b'>
+    <div className='flex items-center max-w-[1400px] mx-auto justify-center font-inter text-zinc-700 bg-slate-400 py-2'>
+      <span className='font-semibold'>Under Active Development</span>
+    </div>
     <nav className='Mobile-Nav flex lg:hidden w-full bg-white  items-center justify-between py-4 px-4'>
           <a href='#' className='Company-LOGO flex items-center gap-1'>           
              <img src='/images/E-2.png' alt='logo' width='50' height='50'  className=''/>
@@ -50,24 +53,24 @@ const Header = () => {
             
     </nav>
 
-    <nav className='Desktop-Nav hidden lg:flex items-center justify-between mx-auto max-w-[1400px] p-8 bg-white font-inter'>
-          < a href='#' className='Company-LOGO flex items-center gap-3'>
+    <nav className='Desktop-Nav hidden lg:flex items-center justify-between mx-auto max-w-[1400px] p-8 bg-red-300 font-inter'>
+          < a href='/' className='Company-LOGO flex items-center gap-3'>
               <img src='/images/E-2.png' alt='logo' width={60} className=''/>
               <h1 className='text-2xl font-bold'>Easy UI</h1>
           </a>
           <ul className='Nav-Primary-Items flex  gap-5 text-base text-[#00000060] bg--400'>
               <li>
-                <a href='#'>Components</a>
+                <a href='/components'>Components</a>
               </li>
               <li>
                 <a href='#'>Documentation</a>
               </li>
               <li>
-                <a href='#'>Porfolio</a>
+                <a href='https://foody-734ba.web.app/'>Porfolio</a>
               </li>        
           </ul>
           <div className='Nav-Secondary-Items flex  items-center gap-5 bg--400'>
-                <a href='#' className='text-base text-[#00000060]'>Github</a>
+                <a href='https://github.com/LuciferTyagi' className='text-base text-[#00000060]'>Github</a>
                 <button className='DarkMode-Button '>
                     <FontAwesomeIcon icon={faMoon} className='size-5 '/>
                 </button>

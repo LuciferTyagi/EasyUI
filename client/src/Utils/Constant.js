@@ -62,3 +62,5 @@ export const testimonialsData = [
       "I don't know how to thank for such a good file, It should be paid product actually.",
   },
 ];
+
+export const wordArray =["Developers", "Coders", "Engineers"];

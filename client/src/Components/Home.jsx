@@ -5,7 +5,7 @@ import Footer from './Footer'
 
 const Home = () => {
   return (
-    <div className='container mx-auto bg-[#ECE0D4] pt-16 lg:pt-0'>
+    <div className=''>
       <Hero/>    
       <Footer/>
     </div>
