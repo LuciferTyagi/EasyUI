@@ -16,6 +16,6 @@ export default function useAnimatedHeading(words, intervalTime = 2000, animation
 
     return () => clearInterval(interval);
   }, [words, intervalTime, animationDuration]);
-
+console.log("yes")
   return { word: words[index], isAnimating };
 }

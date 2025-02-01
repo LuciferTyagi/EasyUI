@@ -31,36 +31,23 @@ export const testimonialsData = [
     name: "Pratham Seth",
     image: "/images/Pratham.jpg",
     description:
-      "I don't know how to thank for such a good file, It should be paid product actually.",
+      "PraI don't know how to thank  file, It should be paid product ally.",
   },
   {
     id:2,
     name: "Vishal Tiwari",
     image: "/images/Vishal.png",
     description:
-      "I don't know how to thank for such a good file, It should be paid product actually.",
+      "VishI don't know how to thank for such ld be paid product actually.",
   },
   {
     id:3,
     name: "CJ",
     image: "/images/Cj.jpg",
     description:
-      "I don't know how to thank for such a good file, It should be paid product actually.",
+      "CI don't know how to thank for such a good file, It should be paid product actually.",
   },
-  {
-    id:4,
-    name: "Prerit Saxena",
-    image: "/images/Cj.jpg",
-    description:
-      "I don't know how to thank for such a good file, It should be paid product actually.",
-  },
-  {
-    id:5,
-    name: "Pranav Tripathi",
-    image: "/images/Cj.jpg",
-    description:
-      "I don't know how to thank for such a good file, It should be paid product actually.",
-  },
+  
 ];
 
 export const wordArray =["Developers", "Coders", "Engineers"];

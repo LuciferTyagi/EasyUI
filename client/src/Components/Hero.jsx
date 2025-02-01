@@ -1,60 +1,50 @@
-import { faCss, faReact } from '@fortawesome/free-brands-svg-icons'
+import { faReact } from '@fortawesome/free-brands-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import React, { useEffect, useState } from 'react'
 import { useNavigate } from "react-router-dom";
-import HeroCard from './HeroCard.jsx';
-import Testimonial from './Testimonial.jsx';
-import { faArrowRight } from '@fortawesome/free-solid-svg-icons';
+import { faArrowLeft, faArrowRight } from '@fortawesome/free-solid-svg-icons';
 import useAnimatedHeading from '../Hooks/useAnimatedHeading.jsx';
 import { wordArray } from '../Utils/Constant.js';
+import { hover, motion } from "motion/react"
+import TestimonialSlider from './TestimonialCard.jsx';
+const FlipAnimation = ({children}) =>{
+  return <motion.span
+          initial="initial"
+          whileHover="hovered"
+          className='text-white bg--300 mr-2 relative overflow-hidden whitespace-nowrap text-2xl'>
+          <motion.div
+          variants={{
+            initial:{y:0},
+            hovered:{y:'-100%'},
+          }}
+          >
+          {children} 
+          </motion.div>
+          <motion.div
+          className='absolute inset-0'
+          variants={{
+            initial:{y:'100%'},
+            hovered:{y:0},
+          }}
+          >
+          {children} 
+          </motion.div>    
+          </motion.span>
+}
 const Hero = () => {
   const navigate  = useNavigate();
   const { word, isAnimating } = useAnimatedHeading(wordArray);
   return (
     <section className='Hero-Section bg--400 w-full  px-4 py-20 font-inter'>
-    {/* <div className='  bg--400 flex flex-col items-center  gap-4 px-2 2xl:px-6 '>
-            <div className='Hero-Main-Container  lg:flex lg:justify-between lg:items-center    bg--500'>
-               <div className='Hero-Info-&Button-Container 2xl:w-[40%] bg--300  flex flex-col gap-4'>
-                 <div className='Hero-Info w-[100%]  p-2 rounded-md bg-[#865D36] flex flex-col gap-4 '>
-                    <p className='text-2xl md:text-3xl 2xl:text-4xl font-semibold font-inter text-[#3E362E]'><span className='text-[#ECE0D4]'>EasyUI, </span>Effortless UI for Developers</p>
-                    <div className='flex  gap-3 text-base md:text-lg 2xl:text-xl font-inter font-semibold text-[#3E362E] '>
-                         <p className=''>Build Using:</p>
-                         <div className='flex items-center gap-1'>
-                         <FontAwesomeIcon icon={faReact} className='text-[#ECE0D4]'/>
-                         <p>ReactJs</p>
-                         </div>
-                         <div className='flex items-center gap-1'>
-                         <FontAwesomeIcon icon={faCss} className='text-[#ECE0D4]'/>
-                         <p>Tailwind</p>
-                         </div>
-                    </div>
-                    <p className='text-sm md:text-base 2xl:text-lg font-normal font-inter text-[#ECE0D480]'>Easy UI is a platform where developers can access ready-to-use UI components built with React.js and Tailwind CSS. Customize and integrate them into your projects without needing to worry about creating components from scratch.</p>
-                 </div>
-                 <div className='Hero-buttons flex flex-col md:flex-row gap-4 w-[100%]  '>
-               <button onClick={() => navigate('/components')} className='Hero-button w-[100%] bg-[#865D36] rounded font-inter font-normal p-2 text-[#ECE0D4] shadow'>Get Started</button>
-               <button onClick={() => navigate('/components')} className='Hero-button w-[100%]  border-[1px] border-[#3E362E50] rounded font-inter font-normal p-2 text-[#3E362E] shadow'>What is EasyUI?</button>          
-                  </div>
-               </div>
-           
-               <div className='Hero-Image bg--300 2xl:w-[50%] '>
-                <img src='/images/HeroImage.png' alt='hero-image' className='md:scale-90 2xl:scale-100'/>
-               </div>
-            </div>
-
-           <div className='HeroCard-Container  flex flex-col gap-4 lg:flex-row lg:mt-16 bg--300'>
-           <HeroCard/>
-           </div>
-           <Testimonial/>
-           
-    </div> */}
-    <div className='w-full h-screen max-w-[1400px]  mx-auto flex flex-col bg--200  '>
-          <div className='flex flex-col items-start bg--300'>
+    <div className='Hero-Section-Info w-full  max-w-[1400px]  mx-auto flex flex-col xl:grid xl:grid-cols-2 xl:gap-10  bg-red-200  '>
+          
+          <div className='flex flex-col items-start bg-green-300'>
                 
                 <button className='Request-Buttom flex items-center gap-2 bg-neutral-100 rounded-full p-3 ring-1 ring-[#00000060] '>
                   <span className='text-xs'>Request For Components</span>
                   <FontAwesomeIcon icon={faArrowRight} className='size-3'/>
                 </button>
-                <h1 className='font-bold text-4xl md:text-7xl text-[#3F3F46] my-4'>EasyUI, Effortless<br></br> UI For <span className={`inline-block transition-all duration-300 ${isAnimating ? "scale-110 opacity-0" : "scale-100 opacity-100"}`}>{word}</span></h1>
+                <h1 className='font-bold text-4xl md:text-7xl text-[#3F3F46] my-4 '>EasyUI, Effortless<br></br> UI For <span className={`inline-block transition-all duration-300 ${isAnimating ? "scale-110 opacity-0" : "scale-100 opacity-100"}`}>{word}</span></h1>
                 <h3 className='text-base sm:text-xl text-zinc-300 my-4 max-w-xl'>Easy UI provides ready-to-use UI components that integrate seamlessly into your projects—no need to build from scratch or install any external libraries.</h3>
                 <div className='Hero-Buttons flex flex-col sm:flex-row   gap-4 w-full'>
                       <button className='Component-Button w-full bg-slate-900 p-4 rounded-2xl sm:w-52'>
@@ -64,9 +54,35 @@ const Hero = () => {
                               <a href='#' className='text-black/60 '>Get Started</a>
                       </button>
                 </div>
+                <div className='Build-Using flex gap-4 bg--300 text-sm mt-8 opacity-60'>
+                      <div className='flex gap-1 md:gap-2 items-center'>
+                            <FontAwesomeIcon icon={faReact} className='size-4 md:size-10'/>
+                            <span className='font-semibold text--700'>React.js</span>
+                      </div>
+                      <div className='flex gap-1 md:gap-2 items-center'>
+                            <img src='/images/tailwind.svg' alt='css' className='size-4 md:size-10'/>
+                            <span className='font-semibold text--700'>TailwindCSS</span>
+                      </div>
+                </div>
           </div>
+          <div className='Hero-Section-Card sm:max-w-[450px] lg:max-w-[500px] xl:max-w-[100%] xl:mx-0  mx-auto mt-20 xl:mt-0 bg-yellow-300'>
+          <div className='Hover-Me bg-[#1d1c20] border border-white/[0.08]  relative overflow-hidden w-full rounded-xl p-4'>
+                <h2 className='text-white mb-4'>Accelerate Your Development Workflow</h2>
+                <p className='text-[#a9a9a9] text-sm'>Save time with ready-to-use React components, optimized for performance and accessibility.</p>
+                <div className='Hover-Me-Animation h-20 xl:h-40 flex items-center text-white'>
+                  <FlipAnimation>Hover</FlipAnimation>
+                  <FlipAnimation>Me</FlipAnimation>
+                  <FlipAnimation>Here</FlipAnimation>
+                  <FlipAnimation>!</FlipAnimation>
+                </div>
+          </div>
+          <div className='flex items-center justify-center mt-5 bg--400'>
+                <TestimonialSlider/>
+          </div>
+         </div>
     </div>
-    <Testimonial/>
+   
+    
     </section>
   )
 }
