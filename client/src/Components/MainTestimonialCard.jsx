@@ -1,6 +1,6 @@
 const MainTestimonialCard = ({ testimonial }) => {
     return (
-      <div className="relative w-full max-w-[500px] h-auto bg-white rounded-2xl p-4 pb-8 text-center shadow border-[1px] border-zinc-500/10">
+      <div className="relative w-full max-w-[400px] h-auto bg-white rounded-2xl p-4 pb-8 text-center shadow border-[1px] border-zinc-500/10">
         <img
           src={testimonial.image}
           alt="user"
