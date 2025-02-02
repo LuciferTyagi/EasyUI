@@ -3,10 +3,11 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import React, { useEffect, useState } from 'react'
 import { useNavigate } from "react-router-dom";
 import { faArrowLeft, faArrowRight } from '@fortawesome/free-solid-svg-icons';
-import useAnimatedHeading from '../Hooks/useAnimatedHeading.jsx';
+
 import { wordArray } from '../Utils/Constant.js';
 import { hover, motion } from "motion/react"
 import TestimonialSlider from './TestimonialCard.jsx';
+import AnimatedHeading from '../Hooks/AnimatedHeading.jsx';
 const FlipAnimation = ({children}) =>{
   return <motion.span
           initial="initial"
@@ -32,19 +33,18 @@ const FlipAnimation = ({children}) =>{
           </motion.span>
 }
 const Hero = () => {
-  const navigate  = useNavigate();
-  const { word, isAnimating } = useAnimatedHeading(wordArray);
+  
   return (
-    <section className='Hero-Section bg--400 w-full  px-4 py-20 font-inter'>
-    <div className='Hero-Section-Info w-full  max-w-[1400px]  mx-auto flex flex-col xl:grid xl:grid-cols-2 xl:gap-10  bg-red-200  '>
+    <section className='Hero-Section bg-pink-400 w-full  px-4 py-20 font-inter'>
+    <div className='Hero-Section-Info&Card w-full  max-w-[1400px]  mx-auto flex flex-col xl:grid xl:grid-cols-2 xl:gap-10  bg-red-200  '>
           
-          <div className='flex flex-col items-start bg-green-300'>
+          <div className='Hero-Section-Info flex flex-col items-start bg-green-300'>
                 
                 <button className='Request-Buttom flex items-center gap-2 bg-neutral-100 rounded-full p-3 ring-1 ring-[#00000060] '>
                   <span className='text-xs'>Request For Components</span>
                   <FontAwesomeIcon icon={faArrowRight} className='size-3'/>
                 </button>
-                <h1 className='font-bold text-4xl md:text-7xl text-[#3F3F46] my-4 '>EasyUI, Effortless<br></br> UI For <span className={`inline-block transition-all duration-300 ${isAnimating ? "scale-110 opacity-0" : "scale-100 opacity-100"}`}>{word}</span></h1>
+                <h1 className='font-bold text-4xl md:text-7xl text-[#3F3F46] my-4 '>EasyUI, Effortless<br></br> UI For  <AnimatedHeading words={wordArray} /></h1>
                 <h3 className='text-base sm:text-xl text-zinc-300 my-4 max-w-xl'>Easy UI provides ready-to-use UI components that integrate seamlessly into your projects—no need to build from scratch or install any external libraries.</h3>
                 <div className='Hero-Buttons flex flex-col sm:flex-row   gap-4 w-full'>
                       <button className='Component-Button w-full bg-slate-900 p-4 rounded-2xl sm:w-52'>
@@ -65,6 +65,7 @@ const Hero = () => {
                       </div>
                 </div>
           </div>
+          
           <div className='Hero-Section-Card sm:max-w-[450px] lg:max-w-[500px] xl:max-w-[100%] xl:mx-0  mx-auto mt-20 xl:mt-0 bg-yellow-300'>
           <div className='Hover-Me bg-[#1d1c20] border border-white/[0.08]  relative overflow-hidden w-full rounded-xl p-4'>
                 <h2 className='text-white mb-4'>Accelerate Your Development Workflow</h2>

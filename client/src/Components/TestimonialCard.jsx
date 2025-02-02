@@ -22,7 +22,7 @@ const TestimonialSlider = () => {
     const randomRotate = () => Math.floor(Math.random() * 21) - 10;
     return (
       <div className="w-full flex flex-col  items-center  bg--400 mt-6 ">
-        <div className="w-full max-w-[400px]    relative h-[200px]  bg--400">
+          <div className="w-full max-w-[400px]    relative h-[200px]  bg--400">
             <AnimatePresence>
         {testimonialsData.map((test ,idx) =>{
             const rotation = useMemo(() => randomRotate(), [idx]);
@@ -62,15 +62,16 @@ const TestimonialSlider = () => {
         })}
         </AnimatePresence>
     
-     </div>
-     <div className="Testimonial-Controller  flex justify-center gap-6 mt-4  text-black/70">
+          </div>
+
+         <div className="Testimonial-Controller  flex justify-center gap-6 mt-4  text-black/70">
           <button onClick={prevTestimonial}>
           <FontAwesomeIcon icon={faArrowLeft} className=""/>
           </button>
           <button onClick={nextTestimonial}>
           <FontAwesomeIcon icon={faArrowRight} className=""/>
           </button>
-          </div> 
+         </div> 
      </div>
  
     );

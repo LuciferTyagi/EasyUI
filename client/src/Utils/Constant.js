@@ -45,7 +45,7 @@ export const testimonialsData = [
     name: "CJ",
     image: "/images/Cj.jpg",
     description:
-      "CI don't know how to thank for such a good file, It should be paid product actually.",
+      "CI don't know how to thank for such a good file, It should be paid product actually .",
   },
   
 ];

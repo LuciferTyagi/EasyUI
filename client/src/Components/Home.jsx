@@ -2,12 +2,15 @@ import React from 'react'
 import Header from './Header'
 import Hero from './Hero'
 import Footer from './Footer'
+import ExampleComponent from './ExampleComponent'
+import Testimonial from './Testimonial'
 
 const Home = () => {
   return (
     <div className=''>
-      <Hero/>    
-      {/* <Footer/> */}
+      <Hero/>
+      <ExampleComponent/>    
+      <Testimonial/>
     </div>
 
   )
