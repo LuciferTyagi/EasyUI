@@ -92,3 +92,19 @@ export const footerLinks = [
     ],
   },
 ];
+export const sidebarItems = [
+  {
+    title: "Follow For More Updates",
+    links: [
+      { name: "Linkedin @YagyanshTyagi", url: "https://www.linkedin.com/in/lucifertyagi/" },
+    ],
+  },
+  {
+    title: "Getting Started",
+    links: [
+      { name: "Installation", url: "/" },
+      { name: "Introduction", url: "/" },
+    ],
+  },
+];
+

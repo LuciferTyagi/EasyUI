@@ -53,7 +53,7 @@ const Header = () => {
             
     </nav>
 
-    <nav className='Desktop-Nav hidden lg:flex items-center justify-between mx-auto max-w-[1400px] p-8 bg-red-300 font-inter'>
+    <nav className='Desktop-Nav hidden lg:flex items-center justify-between mx-auto max-w-[1400px] py-8 bg-red-300 font-inter'>
           < a href='/' className='Company-LOGO flex items-center gap-3'>
               <img src='/images/E-2.png' alt='logo' width={60} className=''/>
               <h1 className='text-2xl font-bold'>Easy UI</h1>

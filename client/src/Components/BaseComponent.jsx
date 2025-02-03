@@ -62,7 +62,7 @@ const BaseComponent = ({ name , categories }) => {
       console.log("SelectedItem",selectedItem)
 
   return (
-    <div className="flex flex-col gap-4 h-[94vh] overflow-y-scroll    bg--300 p-4 ">
+    <div className="flex flex-col gap-4     bg--300 p-4 ">
             <div className='Component-Info flex flex-col gap-2'>
       
                     <p className='text-base font-medium text-[#3E362E]'>{selectedCategory.name}</p>
