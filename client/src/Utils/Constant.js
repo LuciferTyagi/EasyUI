@@ -65,3 +65,30 @@ export const testimonialsData = [
 ];
 
 export const wordArray =["Developers", "Coders", "Engineers"];
+
+export const footerLinks = [
+  {
+    title: "Components",
+    links: [
+      { name: "Components", href: "/accordion" },
+      { name: "Documentation", href: "/accordion" },
+      { name: "Portfolio", href: "/accordion" },
+      { name: "Accordion", href: "/accordion" },
+      { name: "Alert", href: "/alert" },
+    ],
+  },
+  {
+    title: "Socials",
+    links: [
+      { name: "Linkedin", href: "https://www.linkedin.com/in/lucifertyagi/" },
+      { name: "Github", href: "https://github.com/LuciferTyagi" },
+      { name: "Foody", href: "https://foody-734ba.web.app/" },
+    ],
+  },
+  {
+    title: "EasyUI",
+    links: [
+      { name: "EasyUI", href: "/" },
+    ],
+  },
+];
