@@ -1,7 +1,8 @@
 import { useTime, useTransform } from 'framer-motion'
 import React from 'react'
 import { motion } from 'framer-motion';
-import Card from '../private_components/Card';
+import Card from './Card';
+
 const ExampleComponent = () => {
 const time = useTime();
 const rotate = useTransform(time , [0,3000] , [0,360],{
@@ -30,7 +31,7 @@ const rotatingBg = useTransform(rotate,(r) =>{
 
                     <div className='Second-Child Component-Card bg--300 border-[1px] border-zinc-300 rounded-xl p-4 shadow-md'>
                         <h3 className='text-center mb-4 text-2xl font-medium text-zinc-700'>3D Card Effect</h3>
-                        <div className='grid grid-cols-1 gap-2'>
+                        <div className='grid grid-cols-1 gap-2 '>
                              <Card/>
                         </div>
                     </div>
