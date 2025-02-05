@@ -108,8 +108,6 @@ export const sidebarItems = [
   },
 ];
 
-
-
 export const faqData = [
   {
     id: 1,
@@ -132,3 +130,33 @@ export const faqData = [
     answer: "Most Easy UI components are built using pure ReactJS and Tailwind CSS. Some advanced components may require additional libraries, which will be mentioned in the documentation.",
   }
 ];
+
+export const stepData =["React App","Tailwind CSS","Motion"];
+export const installationSteps = [
+  {
+    id: 1,
+    title: "Create a React App",
+    description: "Run the init command to create a new Next.js project or to setup an existing one",
+    commands: [
+      "npm create vite@latest my-easyui-app --template react",
+      "cd my-easyui-app",
+      "npm install",
+    ],
+  },
+  {
+    id: 2,
+    title: "Install Tailwind CSS",
+    description: "After setting up the project, install Tailwind CSS",
+    commands: [
+      "npm install -D tailwindcss postcss autoprefixer",
+      "npx tailwindcss init -p",
+    ],
+  },
+  {
+    id: 3,
+    title: "Install Motion",
+    description: "Motion is used for animations in React:",
+    commands: ["npm install framer-motion"],
+  },
+];
+

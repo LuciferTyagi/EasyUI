@@ -1,11 +1,9 @@
 import { faReact } from '@fortawesome/free-brands-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import React, { useEffect, useState } from 'react'
-import { useNavigate } from "react-router-dom";
-import { faArrowLeft, faArrowRight } from '@fortawesome/free-solid-svg-icons';
-
+import {  faArrowRight } from '@fortawesome/free-solid-svg-icons';
 import { wordArray } from '../Utils/Constant.js';
-import { hover, motion } from "motion/react"
+import {  motion } from "motion/react"
 import TestimonialSlider from './TestimonialCard.jsx';
 import AnimatedHeading from '../Hooks/AnimatedHeading.jsx';
 const FlipAnimation = ({children}) =>{

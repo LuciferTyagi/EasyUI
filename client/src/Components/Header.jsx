@@ -63,7 +63,7 @@ const Header = () => {
                 <a href='/components'>Components</a>
               </li>
               <li>
-                <a href='#'>Documentation</a>
+                <a href='/components'>Documentation</a>
               </li>
               <li>
                 <a href='https://foody-734ba.web.app/'>Porfolio</a>

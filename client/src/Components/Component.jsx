@@ -6,9 +6,11 @@ import BaseComponent from './BaseComponent';
 import { sidebarItems } from '../Utils/Constant';
 import Footer from "../Components/Footer"
 import Introduction from './Introduction';
+import Installation from './Installation';
+import { motion } from 'motion/react';
 const Component = () => {
     const[sideBar ,setSideBar] = useState(false);
-    const [selectedItem, setSelectedItem] = useState("About this Page");
+    const [selectedItem, setSelectedItem] = useState("Introduction");
     const [categories , setCategories] = useState([]);
     const sidebarRef = useRef();
     const closeSidebar = (e) =>{
@@ -70,15 +72,18 @@ const Component = () => {
                    </div>
                 )}
                 
-                <aside class="hidden z-30  sticky top-0  h-screen w-full shrink-0  lg:block lg:self-start bg--300 pr-6 pt-">
-                    <nav className='h-full bg-yellow-300 overflow-y-scroll   text-sm'>                  
+                <aside class="hidden z-30  sticky top-0  h-screen w-full shrink-0  lg:block lg:self-start bg--300 pr-6 ">
+                    <nav className='h-full bg-yellow-300 overflow-y-scroll   text-sm pl-1'>                  
                         {sidebarItems.map((item) =>(
                             <ul key={item.title}>
                                 <li>
                                     <h4 className='font-semibold text-zinc-700 mb-2'>{item.title}</h4>
                                     <ul className='space-y-2 mb-4'>
                                         {item.links.map((link) =>(
-                                            <li className='text-zinc-500 bg--200    ' key={link.name}><a href={link.url} className='text-zinc-500 '>{link.name}</a></li>
+                                            <li onClick={() => setSelectedItem(link.name)} className='text-zinc-500 bg--200 ' key={link.name}><motion.span  
+                                            animate={selectedItem === link.name ? { y: [0, -5, 0], scale: [1, 1.1, 1], transition: { y: { repeat: Infinity, duration: 0.5, ease: "easeInOut" }, scale: { repeat: Infinity, duration: 0.5, ease: "easeInOut" } } } : {}}
+                                            
+                                            className='cursor-pointer inline-block'>{link.name}</motion.span></li>
                                         ))}
                                     </ul>
                                 </li>
@@ -90,7 +95,10 @@ const Component = () => {
                                     <h4 className='font-semibold text-zinc-700 mb-2'>{category.name}</h4>
                                     <ul className='space-y-2 mb-4'>
                                         {category.items.map((item) =>(
-                                            <li onClick={() => setSelectedItem(item.name)} className='text-zinc-500'><span >{item.name}</span></li>
+                                            <li onClick={() => setSelectedItem(item.name)} className='text-zinc-500 '><motion.span 
+                                            animate={selectedItem === item.name ? { y: [0, -5, 0], scale: [1, 1.1, 1], transition: { y: { repeat: Infinity, duration: 0.5, ease: "easeInOut" }, scale: { repeat: Infinity, duration: 0.5, ease: "easeInOut" } } } : {}}
+
+                                            className={`cursor-pointer inline-block`} >{item.name}</motion.span></li>
                                         ))}
                                     </ul>
                                 </li>
@@ -99,8 +107,10 @@ const Component = () => {
                     </nav>
                 </aside>
                 <main className='bg-yellow-200 '>
-                {selectedItem === "About this Page" ? (
+                {selectedItem === "Introduction" ? (
                     <Introduction />
+                ) : selectedItem === "Installation" ? (
+                    <Installation/>
                 ) : (
                     <BaseComponent name={selectedItem} categories={categories}/>
                 )}
