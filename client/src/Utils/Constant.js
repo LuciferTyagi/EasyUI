@@ -108,3 +108,27 @@ export const sidebarItems = [
   },
 ];
 
+
+
+export const faqData = [
+  {
+    id: 1,
+    question: "What is Easy UI?",
+    answer: "Easy UI is a platform that provides pre-built, customizable ReactJS components, helping developers speed up their development process with high-quality UI elements.",
+  },
+  {
+    id: 2,
+    question: "How can I customize the components in Easy UI?",
+    answer: "Easy UI allows customization through Tailwind CSS classes. You can modify the styling directly within the provided code or use our upcoming customization tool for a more intuitive experience.",
+  },
+  {
+    id: 3,
+    question: "Is Easy UI free to use?",
+    answer: "Yes, Easy UI offers a collection of free components. However, we plan to introduce premium components with advanced features in the future.",
+  },
+  {
+    id: 4,
+    question: "Do I need to install any dependencies to use Easy UI components?",
+    answer: "Most Easy UI components are built using pure ReactJS and Tailwind CSS. Some advanced components may require additional libraries, which will be mentioned in the documentation.",
+  }
+];

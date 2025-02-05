@@ -1,10 +1,11 @@
 import React, { useEffect, useRef, useState } from 'react'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faAddressCard, faArrowRight, faX, faXmark } from '@fortawesome/free-solid-svg-icons';
-import PageInfo from './PageInfo';
+import PageInfo from './Introduction';
 import BaseComponent from './BaseComponent';
 import { sidebarItems } from '../Utils/Constant';
 import Footer from "../Components/Footer"
+import Introduction from './Introduction';
 const Component = () => {
     const[sideBar ,setSideBar] = useState(false);
     const [selectedItem, setSelectedItem] = useState("About this Page");
@@ -99,7 +100,7 @@ const Component = () => {
                 </aside>
                 <main className='bg-yellow-200 '>
                 {selectedItem === "About this Page" ? (
-                    <PageInfo />
+                    <Introduction />
                 ) : (
                     <BaseComponent name={selectedItem} categories={categories}/>
                 )}

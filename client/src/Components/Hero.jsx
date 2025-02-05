@@ -77,7 +77,7 @@ const Hero = () => {
                   <FlipAnimation>!</FlipAnimation>
                 </div>
           </div>
-          <div className='flex items-center justify-center mt-5 bg--400'>
+          <div className='flex items-center justify-center mt-5 bg-green-400 px-4'>
                 <TestimonialSlider/>
           </div>
          </div>

@@ -1,12 +1,9 @@
 import { useTime, useTransform } from 'framer-motion'
 import React from 'react'
 import { motion } from 'framer-motion';
-import StandardAccordion from './Accordion/StandardAccordion';
-import SimpleAlert from './Alert/SimpleAlert';
-import MultiExpandableAccordion from './Accordion/MultiExpandableAccordion';
-import Card from './Card';
+import Card from '../private_components/Card';
 const ExampleComponent = () => {
-    const time = useTime();
+const time = useTime();
 const rotate = useTransform(time , [0,3000] , [0,360],{
     clamp:false,
 })
@@ -32,7 +29,7 @@ const rotatingBg = useTransform(rotate,(r) =>{
                     </div>
 
                     <div className='Second-Child Component-Card bg--300 border-[1px] border-zinc-300 rounded-xl p-4 shadow-md'>
-                        <h3 className='text-center mb-4 text-2xl font-medium text-zinc-700'>Base Components</h3>
+                        <h3 className='text-center mb-4 text-2xl font-medium text-zinc-700'>3D Card Effect</h3>
                         <div className='grid grid-cols-1 gap-2'>
                              <Card/>
                         </div>
